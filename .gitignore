@@ -1,0 +1,34 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local state, caches and data (keep only *.example.json)
+*.json
+!*.example.json
+
+# Logs
+*.log
+
+# Browser / Playwright profiles and their locks
+invenno_profile/
+reclaim_profile/
+*_profile/
+*.lock
+
+# Bank statements and exports
+bank_exports/
+statements/
+*.csv
+
+# Chat edit backups and the Claude CLI working folder
+app_backups/
+chat_ws/
+*.bak*
+startup-backup/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

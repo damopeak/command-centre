@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Command Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#06070b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Command Centre">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="icon" type="image/png" href="icon-192.png">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">GA</div>
+        <div>
+          <div class="brand-name">Command Centre</div>
+          <div class="brand-sub">GA Goods</div>
+        </div>
+      </div>
+      <nav class="nav" id="nav"></nav>
+      <div class="sidebar-foot">
+        <div class="status-pill"><span class="dot ok"></span>All systems running</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="search" placeholder="Search products, jobs, notes…" autocomplete="off">
+          <kbd>Ctrl K</kbd>
+        </div>
+        <div class="topbar-right">
+          <span class="clock" id="clock"></span>
+          <button class="icon-btn voice-btn" id="voiceBtn" aria-label="Voice brief">
+            <svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+          </button>
+          <div class="theme-wrap">
+            <button class="icon-btn" id="themeBtn" aria-label="Theme">
+              <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.5-.8 1.5-1.6 0-.5-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.6 1.6-1.6H16a5 5 0 0 0 5-5c0-4.2-4-7.6-9-7.6z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="14.5" cy="7" r="1"/><circle cx="17" cy="11" r="1"/></svg>
+            </button>
+            <div class="theme-menu" id="themeMenu"></div>
+          </div>
+          <button class="icon-btn has-badge" aria-label="Notifications">
+            <svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>
+            <span class="badge">4</span>
+          </button>
+          <div class="avatar">GA</div>
+        </div>
+      </header>
+
+      <div class="view" id="view"></div>
+    </main>
+  </div>
+
+  <div class="palette-bg" id="palette">
+    <div class="palette">
+      <input id="paletteInput" placeholder="Jump to a page, product, job or note…" autocomplete="off">
+      <div class="palette-list" id="paletteList"></div>
+      <div class="palette-foot"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
+    </div>
+  </div>
+
+  <div class="ticker" id="ticker"><div class="ticker-tag"><span class="dot ok"></span>LIVE</div><div class="ticker-track" id="tickerTrack"></div></div>
+
+  <div class="boot" id="boot">
+    <div class="boot-box">
+      <div class="brand-mark">GA</div>
+      <div id="bootLines"></div>
+      <div class="boot-bar"><div></div></div>
+    </div>
+  </div>
+
+  <div class="sample-tag" id="sampleTag">Memory page: sample data</div>
+
+  <script src="data.js"></script>
+  <script src="fx.js"></script>
+  <script src="app.js"></script>
+  <script src="chat-ui.js"></script>
+  <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+</body>
+</html>

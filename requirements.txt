@@ -1,0 +1,4 @@
+# Python 3.12+ (developed on 3.14, Windows)
+playwright>=1.45
+icalendar>=5.0
+recurring-ical-events>=2.2
