@@ -1,5 +1,5 @@
 // Purchases Tracker sync. Paste this into the sheet: Extensions > Apps Script, replace everything, Save.
-// Then Run > setup (styles the sheet now), and Deploy > New deployment > Web app (Execute as: Me, Access: Anyone).
+// Then Run > setup (styles the sheet now) and Deploy > New deployment > Web app (Execute as: Me, Access: Anyone).
 // The Command Centre posts every order here every 20 minutes. Rows are added or updated, never deleted.
 // Oldest orders at the top; new ones appear as you scroll down. Your columns (Paid with, Action, Checked) are never overwritten.
 const TOKEN = "CHANGE_ME";   // must match SHEET_WEBHOOK_TOKEN in .env

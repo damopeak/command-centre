@@ -89,7 +89,7 @@ flowchart LR
 
 ## Engineering highlights
 
-- **Cross-process browser profile lock.** Invenno uses single-use (rotating) refresh tokens. When the server and a one-off script opened the same session at once, the token rotated twice and the session was revoked. Every use of the profile now goes through one lock that combines a thread lock with an OS-level `msvcrt` file lock, and all API calls run inside that one browser so the rotated token is always saved.
+- **Cross-process browser profile lock.** Invenno uses single-use (rotating) refresh tokens. When the server and a one-off script opened the same session at once, the token rotated twice and the session was revoked. Every use of the profile now goes through one lock that combines a thread lock with an OS-level `msvcrt` file lock and all API calls run inside that one browser so the rotated token is always saved.
 - **IMAP across providers, in parallel.** Inboxes are scanned concurrently with a thread pool while keeping `.env` order for de-duplication of forwarded copies. It handles Gmail-only fetch items (`X-GM-MSGID`, labels), iCloud returning `[None]` for empty searches, server-side `FROM` searches so busy inboxes do not hide codes, `BODY.PEEK` so nothing is marked as read and a Message-ID cache so each body is fetched once.
 - **Content-hashed transaction IDs.** Overlapping statement exports would duplicate rows. Each CSV row gets an ID hashed from its content plus its position among identical rows, the largest copy across files wins and an alias table keeps IDs stable for rows already synced to the Google Sheet.
 - **Prompt-injection-safe LLM extraction.** Emails are passed to the Claude CLI as JSON data with a system prompt that says never to follow instructions inside them, with all tools disabled, the user's own settings ignored and output parsed strictly as a JSON array. Edit mode only ever sees the user's own messages, never email or lead text.
@@ -121,7 +121,7 @@ You can run the whole dashboard with realistic but entirely fake data. No accoun
 python demo_server.py
 ```
 
-Then open http://127.0.0.1:8799 (add `--open` to launch the browser for you). `demo_server.py` serves the same front-end from `app/` and answers every `/api/*` endpoint with invented products, orders, transactions, emails, events and jobs, generated relative to today's date so the charts look current. Buttons that would change something (notes, categories, "Chased", lead status, holdings) are accepted and ignored, and the chat box replies that it is in demo mode. Press Ctrl+C to stop it.
+Then open http://127.0.0.1:8799 (add `--open` to launch the browser for you). `demo_server.py` serves the same front-end from `app/` and answers every `/api/*` endpoint with invented products, orders, transactions, emails, events and jobs, generated relative to today's date so the charts look current. Buttons that would change something (notes, categories, "Chased", lead status, holdings) are accepted and ignored and the chat box replies that it is in demo mode. Press Ctrl+C to stop it.
 
 ## Setup
 

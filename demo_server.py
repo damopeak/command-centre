@@ -629,7 +629,7 @@ def deadlines():
 
 
 DEMO_CHAT = ("This is **demo mode**, so I'm not connected to a model or any real data. In the real Command Centre, Ask mode sends your "
-             "question plus a JSON snapshot of the dashboard to the local Claude CLI, and Edit mode changes the front-end with a backup and undo.")
+             "question plus a JSON snapshot of the dashboard to the local Claude CLI and Edit mode changes the front-end with a backup and undo.")
 
 
 # ---------- HTTP ----------

@@ -1262,7 +1262,7 @@
           <div class="row-flex imp-actions">
             <a class="btn" href="${esc(x.url)}" target="_blank" rel="noopener">${icon("ext")}${String(x.url).includes("icloud.com") ? "Open iCloud Mail" : "Open in Gmail"}</a>
             ${x.calendarUrl ? `<a class="btn primary" href="${esc(x.calendarUrl)}" target="_blank" rel="noopener">${icon("calendar")}Add to calendar · ${esc(when)}</a>` : ""}
-            <button class="btn" data-imp-done="${esc(x.id)}" data-imp-group="${esc(x.groupKey || "")}" title="Hides it on all your devices, and repeats of it for 7 days">${icon("plus")}Done</button>
+            <button class="btn" data-imp-done="${esc(x.id)}" data-imp-group="${esc(x.groupKey || "")}" title="Hides it on all your devices and repeats of it for 7 days">${icon("plus")}Done</button>
           </div>
         </div>
       </div>`;

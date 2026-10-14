@@ -1,7 +1,7 @@
 """Windows notification every 6 hours: "time to check your Discord leads".
 
 Run by a Windows Task Scheduler task "Discord Leads Reminder" (09:00, 15:00, 21:00, 03:00).
-Skipped if a check already happened in the last 6 hours, and during quiet hours (00:00-07:00).
+Skipped if a check already happened in the last 6 hours and during quiet hours (00:00-07:00).
 """
 import json
 import subprocess

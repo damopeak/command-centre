@@ -1,4 +1,4 @@
-"""Business spending ledger: categorise every bank/card transaction, match stock payments to purchases,
+"""Business spending ledger: categorise every bank/card transaction, match stock payments to purchases
 and raise questions for anything unclear. Learns from the user's answers (merchant -> category).
 
 Categories are the ones the user chose (business basics, overheads, travel & food) plus Transfers / Other.

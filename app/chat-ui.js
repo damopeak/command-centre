@@ -62,7 +62,7 @@
     $("#cmText").placeholder = mode === "ask" ? "Ask anything…" : "e.g. make the profit number green";
     const body = $("#cmBody");
     body.innerHTML = (msgs.length ? "" : `<div class="cm-empty"><div class="cm-hello">${mode === "ask" ? "Hello, what can I help with?" : "What should I change on the dashboard?"}</div>
-        ${mode === "edit" ? `<div class="cm-note">I can change the design and layout. Each change is backed up, and you can undo it. Changes to the data behind the dashboard still go through the main Claude chat.</div>` : ""}
+        ${mode === "edit" ? `<div class="cm-note">I can change the design and layout. Each change is backed up and you can undo it. Changes to the data behind the dashboard still go through the main Claude chat.</div>` : ""}
         <div class="cm-chips">${SUGGEST[mode].map((s) => `<button class="cm-chip">${esc(s)}</button>`).join("")}</div></div>`)
       + msgs.map((m, i) => `<div class="cm-msg ${m.role}${m.error ? " err" : ""}">
           ${m.role === "user" ? `<div class="cm-bubble">${esc(m.text)}</div>` : `<div class="cm-bubble">${md(m.text)}

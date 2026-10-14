@@ -4,7 +4,7 @@ Two modes:
   ask   General Claude + a snapshot of the dashboard data + web search. Read-only: no file or shell tools.
   edit  Changes the dashboard's front-end files (app/*.js, *.css, *.html) only. Gets NO email/lead data,
         so text from outside (emails, Discord posts) can never steer an edit. Every edit is backed up first,
-        syntax-checked after, auto-restored if broken, and can be undone.
+        syntax-checked after, auto-restored if broken and can be undone.
 """
 import json
 import re
